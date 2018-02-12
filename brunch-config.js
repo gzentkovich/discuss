@@ -20,9 +20,12 @@ exports.config = {
       // }
     },
     stylesheets: {
-      joinTo: "css/app.css",
+      joinTo: {
+        "css/app1.css": /^(web\/static\/css)/,
+        "css/materialize.min.css": /^(web\/static\/css)/,
+      },
       order: {
-        after: ["web/static/css/app.css"] // concat app.css last
+        after: ["web/static/css/app1.css","web/static/css/materialize.min.css"] // concat app.css last
       }
     },
     templates: {

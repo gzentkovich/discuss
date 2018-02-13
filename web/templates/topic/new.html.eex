@@ -1,4 +1,4 @@
-<h3>Create a New Topic</h3>
+<h5>Create a New Topic</h5>
 
 <div class="row">
     <%= form_for @changeset, topic_path(@conn, :create), fn f -> %>
@@ -6,6 +6,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <%= text_input f, :title, placeholder: "Title", class: "validate" %>
+                <%= error_tag f, :title %>
             </div>
         </div>
 

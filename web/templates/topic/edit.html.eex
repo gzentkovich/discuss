@@ -1,0 +1,18 @@
+<h5>Edit Topic</h5>
+
+<div class="row">
+    <%= form_for @changeset, topic_path(@conn, :update, @topic), fn f -> %>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <%= text_input f, :title, placeholder: "Title", class: "validate" %>
+                    <%= error_tag f, :title %>
+                </div>
+            </div>
+
+            <div class="row">
+                <%= submit "Update Topic", class: "btn waves-effect waves-default light-blue" %>
+            </div>
+
+    <% end %>
+</div>

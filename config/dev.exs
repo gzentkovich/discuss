@@ -1,5 +1,9 @@
 use Mix.Config
 
+# for secret_key_base
+config :discuss, Discuss.Endpoint,
+  secret_key_base: System.get_env("SECRET_KEY_BASE")
+
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #

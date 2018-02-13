@@ -20,6 +20,16 @@ defmodule Discuss.Router do
 
   end
 
+  scope "/auth", Discuss do
+    pipe_through :browser
+
+    # :provider allows for more than one authentication vendors | providers
+    # as oppose to statically assigning "/github", "/facebook", "/google"
+    # instead "/:provider" works dynamically for each auth provider.
+    get "/:provider", AuthController, :request
+    get "/:provider/callback", AuthController, :callback
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", Discuss do
   #   pipe_through :api

@@ -37,7 +37,12 @@ config :phoenix, :stacktrace_depth, 20
 config :discuss, Discuss.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "discuss",
-  password: "#{DISCUSS_PASSWD}",
+  password: System.get_env("DISCUSS_PASSWD"),
   database: "discuss_dev",
   hostname: "localhost",
   pool_size: 10
+
+
+config :ueberauth, Ueberauth.Strategy.Github.OAuth,
+  client_id: System.get_env("GITHUB_CLIENT_ID"),
+  client_secret: System.get_env("GITHUB_CLIENT_SECRET")

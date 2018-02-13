@@ -2,24 +2,7 @@ exports.config = {
   // See http://brunch.io/#documentation for docs.
   files: {
     javascripts: {
-      joinTo: {
-        "js/app.js": /^(web\/static\/js)/,
-        "js/materialize.min.js": /^(web\/static\/js)/
-      }
-      // To use a separate vendor.js bundle, specify two files path
-      // http://brunch.io/docs/config#-files-
-      // joinTo: {
-      //  "js/app.js": /^(web\/static\/js)/,
-      //  "js/vendor.js": /^(web\/static\/vendor)|(deps)/
-      // }
-      //
-      // To change the order of concatenation of files, explicitly mention here
-      // order: {
-      //   before: [
-      //     "web/static/vendor/js/jquery-2.1.1.js",
-      //     "web/static/vendor/js/bootstrap.min.js"
-      //   ]
-      // }
+      joinTo: "js/app.js"
     },
     stylesheets: {
       joinTo: {
@@ -27,7 +10,7 @@ exports.config = {
         "css/materialize.min.css": /^(web\/static\/css)/,
       },
       order: {
-        after: ["web/static/css/app1.css","web/static/css/materialize.min.css"] // concat app.css last
+        after: ["web/static/css/materialize.min.css","web/static/css/app1.css"] // concat app.css last
       }
     },
     templates: {

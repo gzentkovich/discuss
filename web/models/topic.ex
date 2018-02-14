@@ -3,10 +3,10 @@ defmodule Discuss.Topic do
 
     schema "topics" do
         field :title, :string
+        belongs_to :user, Discuss.User
     end
 
     @doc false
-    # "\\" is used to set a default value for params variable
     def changeset(struct, params \\ %{}) do
         struct
         |> cast(params, [:title])

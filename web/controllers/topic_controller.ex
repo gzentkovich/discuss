@@ -25,6 +25,7 @@ defmodule Discuss.TopicController do
                 conn
                 |> put_flash(:info, "Topic Created")
                 |> redirect(to: topic_path(conn, :index))
+
             {:error, changeset} ->
                 conn
                 |> put_flash(:warning, "Text field can not be blank")

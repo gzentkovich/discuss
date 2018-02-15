@@ -7,7 +7,6 @@ defmodule Discuss.Topic do
         has_many :comments, Discuss.Comment
     end
 
-    @doc false
     def changeset(struct, params \\ %{}) do
         struct
         |> cast(params, [:title])

@@ -1,1 +1,2 @@
 <h3>Show Topics Page</h3>
+<%= @topic.title %>

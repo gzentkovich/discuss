@@ -6,11 +6,12 @@ defmodule Discuss.User do
        field :provider, :string
        field :token, :string
        has_many :topics, Discuss.Topic
+       has_many :comments, Discuss.Comment
 
        timestamps()
    end
 
-   
+
     @doc false
     # "\\" is used to set a default value for params variable
     def changeset(struct, params \\ %{}) do

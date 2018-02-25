@@ -18,16 +18,12 @@ defmodule Discuss.Router do
     pipe_through :browser # Use the default browser stack
 
     resources "/", TopicController
-
   end
 
   scope "/auth", Discuss do
     pipe_through :browser
 
     get "/signout", AuthController, :signout
-    # :provider allows for more than one authentication vendors | providers
-    # as oppose to statically assigning "/github", "/facebook", "/google"
-    # instead "/:provider" works dynamically for each auth provider.
     get "/:provider", AuthController, :request
     get "/:provider/callback", AuthController, :callback
   end

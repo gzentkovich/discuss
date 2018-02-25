@@ -5,7 +5,7 @@ defmodule Discuss.CommentsChannel do
     IO.puts("||||||||||||||||||||||||||||||||||||||||||")
     IO.puts(name)
     IO.puts("||||||||||||||||||||||||||||||||||||||||||")
-    {:ok, %{}, socket}
+    {:ok, %{hey: "there"}, socket}
   end
 
   def handle_in() do

@@ -8,7 +8,7 @@
     <meta name="author" content="">
 
     <title>Hello Discuss!</title>
-    <link rel="stylesheet" href="<%= static_path(@conn, "/css/phoenix.css") %>">
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/materialize.min.css") %>">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
@@ -22,7 +22,7 @@
 
         <ul class="right">
           <%= if @conn.assigns[:user] do %>
-            <li> 
+            <li>
               <%= link "Logout", to: auth_path(@conn, :signout) %>
             </li>
           <% else %>

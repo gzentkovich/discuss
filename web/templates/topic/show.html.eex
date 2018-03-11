@@ -1,2 +1,8 @@
 <h3>Show Topics Page</h3>
 <%= @topic.title %>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    window.createSocket(<%= @topic.id %>)
+  });
+</script>
